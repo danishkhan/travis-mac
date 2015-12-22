@@ -1,2 +1,2 @@
 # travis-mac
-repository for testing mac builds
+repository for testing mac and ios builds
