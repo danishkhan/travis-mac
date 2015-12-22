@@ -8,9 +8,7 @@ before_install:
 - gem install cocoapods -v 0.39.0
 
 before_script: # Find iPhone 6s with iOS 9.0 UDID 
-- export IOS_SIMULATOR_UDID=`instruments 
-- s devices | grep "iPhone 6s (9.0)" | awk
-- F '[\[]' '{print $2}' | sed 's/.$//'` 
+- export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 6s (9.0)" | awk -F '[\[]' '{print $2}' | sed 's/.$//'` 
 - echo $IOS_SIMULATOR_UDID 
 - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
 
